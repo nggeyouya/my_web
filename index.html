@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>油揚げのホームページ - トップ</title>
+  <style>
+    /* リセット */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+    }
+    /* ヘッダーのトップタブ */
+    .top-nav {
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .top-nav ul {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .top-nav li {
+      margin: 0 15px;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #007acc;
+      font-size: 1.2em;
+    }
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+    .top-nav .active a {
+      font-weight: bold;
+      color: #333;
+    }
+    /* コンテナ（サイドバー＋メインコンテンツ） */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+    /* サイドバー */
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #eaeaea;
+    }
+    .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+    /* メインコンテンツ */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    .social-links {
+      list-style: none;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    .social-links li {
+      margin: 12px 0;
+    }
+    .social-links a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>油揚げのホームページ</h1>
+    <nav class="top-nav">
+      <ul>
+        <li class="active"><a href="index.html">トップ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li class="active"><a href="index.html">トップ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="devices.html">使っているデバイス</a></li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <!-- トップページのコンテンツ -->
+      <h2>トップ</h2>
+      <p>ここはトップページのコンテンツです。</p>
+      <hr>
+      <h3>SNSリンク</h3>
+      <ul class="social-links">
+        <li><a href="https://x.com/SIGMA_ABURAAGE" target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href="https://www.youtube.com/@油揚げ_油揚げ" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        <li><a href="https://t.co/mota7OJVmL" target="_blank" rel="noopener noreferrer">VRChat</a></li>
+        <li>Discord: @ab_rg</li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 油揚げのホームページ
+  </footer>
+</body>
+</html>
