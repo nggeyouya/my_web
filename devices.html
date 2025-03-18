@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>油揚げのホームページ - 使っているデバイス</title>
+  <style>
+    /* リセット */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+    }
+    /* ヘッダーのトップタブ */
+    .top-nav {
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .top-nav ul {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .top-nav li {
+      margin: 0 15px;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #007acc;
+      font-size: 1.2em;
+    }
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+    /* active 表示は該当ページで bold にするなど調整可能 */
+    .top-nav .active a {
+      font-weight: bold;
+      color: #333;
+    }
+    /* コンテナ（サイドバー＋メインコンテンツ） */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+    /* サイドバー */
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #eaeaea;
+    }
+    .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+    /* メインコンテンツ */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    /* デバイス一覧のカードスタイル */
+    .device-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .device-item {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .device-item img {
+      width: 80px;  /* 画像サイズは必要に応じて調整 */
+      height: auto;
+      border-radius: 4px;
+      margin-right: 16px;
+    }
+    .device-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .device-info h3 {
+      font-size: 1.1em;
+      margin: 0;
+    }
+    .device-info h3 a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    .device-info h3 a:hover {
+      text-decoration: underline;
+    }
+    .device-price {
+      color: #e67e22;
+      font-weight: bold;
+    }
+    .device-comment {
+      color: #555;
+      font-size: 0.95em;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <h1>油揚げのホームページ</h1>
+    <nav class="top-nav">
+      <ul>
+        <!-- 他のページが active ならクラスを付与する -->
+        <li><a href="index.html">トップ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- サイドバー -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li class="active"><a href="devices.html">使っているデバイス</a></li>
+      </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <h2>使っているデバイス</h2>
+      <p>普段使用しているデバイスの一覧です。</p>
+
+      <div class="device-list">
+        <!-- 1つ目の商品例 -->
+        <div class="device-item">
+          <img src="https://resource.logitechg.com/w_1600,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g703/g703-gallery-1.png?v=1" alt="Logicool G703h">
+          <div class="device-info">
+            <h3>
+              <a href="https://gaming.logicool.co.jp/ja-jp/products/gaming-mice/g703-hero-wireless-gaming-mouse.910-005645.html" target="_blank" rel="noopener noreferrer">
+                Logicool G703h
+              </a>
+            </h3>
+            <div class="device-price">9900円</div>
+            <div class="device-comment">
+              IE3.0クローンの傑作マウス、だが95gとちょっと重いのが難点。3年愛用
+            </div>
+          </div>
+        </div>
+
+        <!-- 2つ目の商品例 -->
+        <div class="device-item">
+          <img src="https://m.media-amazon.com/images/I/81sNFoL63WL._AC_SL1500_.jpg" alt="GX1">
+          <div class="device-info">
+            <h3>
+              <a href="https://www.realforce.co.jp/products/X1UC11/" target="_blank" rel="noopener noreferrer">
+                REALFORCE GX1 日本語配列 45g
+              </a>
+            </h3>
+            <div class="device-price">33000円</div>
+            <div class="device-comment">
+              静電容量無接点方式 ラピッドトリガー 可変アクチュエーションポイント 日本製 最強
+            </div>
+          </div>
+        </div>
+
+        <!-- 3つ目の商品例 -->
+        <div class="device-item">
+          <img src="https://m.media-amazon.com/images/I/71HGP-czBdL._AC_SL1500_.jpg" alt="Gigantus_V2">
+          <div class="device-info">
+            <h3>
+              <a href="https://www.razer.com/jp-jp/gaming-mouse-mats/razer-gigantus-v2?srsltid=AfmBOope_bKXaF2_nEv40Kmz8T-onnNBG435hQegrfEr2EgBCeq6tPt5" target="_blank" rel="noopener noreferrer">
+                Razer Gigantus V2 L
+              </a>
+            </h3>
+            <div class="device-price">2480円</div>
+            <div class="device-comment">
+              安い、デカい、シンプル 半年に一度は交換
+            </div>
+          </div>
+        </div>
+
+        <!-- 4つ目の商品例 -->
+        <div class="device-item">
+          <img src="https://www.sony.jp/products/picture/WH-1000XM5_B_01.jpg" alt="WH_1000MX5">
+          <div class="device-info">
+            <h3>
+              <a href="https://www.sony.jp/headphone/products/WH-1000XM5/?srsltid=AfmBOorK_p2G7OaTeYG4HjWSX87LvRwq0tKH5PAQgVa5t_24T47jahc5" target="_blank" rel="noopener noreferrer">
+                SONY WH-1000MX5
+              </a>
+            </h3>
+            <div class="device-price">44436円</div>
+            <div class="device-comment">
+              ノイズキャンセリング最強 有線でも無線でも使える ゲームも音楽も外でもこれ一台
+            </div>
+          </div>
+        </div>
+
+        <!-- 5つ目の商品例 -->
+        <div class="device-item">
+          <img src="https://m.media-amazon.com/images/I/61RfqSvlqqL._AC_SL1500_.jpg" alt="Nova_Lite">
+          <div class="device-info">
+            <h3>
+              <a href="https://gamesir.com/products/gamesir-nova-lite?variant=44392647557354" target="_blank" rel="noopener noreferrer">
+                GameSir Nova Lite
+              </a>
+            </h3>
+            <div class="device-price">3484円</div>
+            <div class="device-comment">
+              磁気センサースティック ドリフトなし ジャイロセンサーなし 安い
+            </div>
+          </div>
+        </div>
+
+        <!-- 6つ目の商品例 -->
+        <div class="device-item">
+          <img src="画像のURL"alt="画像の説明">
+          <div class="device-info">
+            <h3>
+              <a href="https" target="_blank" rel="noopener noreferrer">
+                商品名
+              </a>
+            </h3>
+            <div class="device-price">0円</div>
+            <div class="device-comment">
+              コメント
+            </div>
+          </div>
+        </div>
+
+        <!-- 7つ目の商品例 -->
+        <div class="device-item">
+          <img src="画像のURL" alt="画像の説明">
+          <div class="device-info">
+            <h3>
+              <a href="https" target="_blank" rel="noopener noreferrer">
+                商品名
+              </a>
+            </h3>
+            <div class="device-price">0円</div>
+            <div class="device-comment">
+              コメント
+            </div>
+          </div>
+        </div>
+      </div><!-- .device-list -->
+    </div><!-- .main-content -->
+  </div><!-- .container -->
+
+  <footer>
+    &copy; 2025 油揚げのホームページ
+  </footer>
+</body>
+</html>
