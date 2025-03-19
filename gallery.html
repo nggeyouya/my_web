@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>油揚げのホームページ - ギャラリー</title>
+  <style>
+    /* リセット */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+    }
+    /* ヘッダーのトップタブ */
+    .top-nav {
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .top-nav ul {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+      padding: 0;
+    }
+    .top-nav li {
+      margin: 0 15px;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #007acc;
+      font-size: 1.2em;
+    }
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+    .top-nav .active a {
+      font-weight: bold;
+      color: #333;
+    }
+    /* コンテナ（サイドバー＋メインコンテンツ） */
+    .container {
+      display: flex;
+      flex: 1;
+    }
+    /* サイドバー */
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #eaeaea;
+    }
+    .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+    /* メインコンテンツ */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    /* ギャラリーのグリッドスタイル */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 16px;
+    }
+    .gallery-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+    }
+    .gallery-item .caption {
+      padding: 10px;
+      font-size: 0.95em;
+      text-align: center;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+    /* モーダル（ライトボックス）のスタイル */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-content img {
+      max-width: 100%;
+      max-height: calc(90vh - 60px); /* キャプション領域を確保 */
+      border-radius: 8px;
+    }
+    .modal-caption {
+      margin-top: 10px;
+      color: #fff;
+      font-size: 1.1em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <h1>油揚げのホームページ</h1>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- サイドバー -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li class="active"><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="devices.html">使っているデバイス</a></li>
+      </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <h2>ギャラリー</h2>
+      <p>自分で撮った写真を掲載しています。写真をクリックすると拡大表示され、下部にキャプションが表示されます。</p>
+      <div class="gallery-grid">
+        <!-- 1つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo1.jpg" alt="Photo 1" data-caption="セイコーの時計台銀座のど真ん中にあるやつ">
+          <div class="caption">Photo 1</div>
+        </div>
+        <!-- 2つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo2.jpg" alt="Photo 2" data-caption="長野県の大正池ここら辺の山はマジきれい紅葉してもきれいやろなぁ">
+          <div class="caption">Photo 2</div>
+        </div>
+        <!-- 3つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo3.jpg" alt="Photo 3" data-caption="伊勢湾ホテルからの景色">
+          <div class="caption">Photo 3</div>
+        </div>
+        <!-- 4つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo4.jpg" alt="Photo 4" data-caption="これも伊勢湾なんか鳥">
+          <div class="caption">Photo 4</div>
+        </div>
+        <!-- 5つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo5.jpg" alt="Photo 5" data-caption="Guzman y Gomezマジうまいメキシコ・アメリカ料理？">
+          <div class="caption">Photo 5</div>
+        </div>
+        <!-- 6つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo6.jpg" alt="Photo 6" data-caption="豚骨の匂い最初行ったときマジきつかったけど今は気にならないな">
+          <div class="caption">Photo 6</div>
+        </div>
+        <!-- 7つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo7.jpg" alt="Photo 7" data-caption="ｻﾌｨｰﾁｬﾝｶﾜｲｲﾔｯﾀｰ">
+          <div class="caption">Photo 7</div>
+        </div>
+        <!-- 8つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo8.jpg" alt="Photo 8" data-caption="おへそってえっちじゃないですか？">
+          <div class="caption">Photo 8</div>
+        </div>
+        <!-- 9つ目の画像 -->
+        <div class="gallery-item">
+          <img src="photo9.jpg" alt="Photo 9" data-caption="キャプション9">
+          <div class="caption">Photo 9</div>
+        </div>
+        <!-- 10個目の画像 -->
+        <div class="gallery-item">
+          <img src="photo10.jpg" alt="Photo 10" data-caption="キャプション10">
+          <div class="caption">Photo 10</div>
+        </div>
+      </div><!-- .gallery-grid -->
+    </div><!-- .main-content -->
+  </div><!-- .container -->
+
+  <!-- モーダル（拡大表示用ライトボックス） -->
+  <div id="lightboxModal" class="modal">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 油揚げのホームページ
+  </footer>
+
+  <script>
+    // モーダル関連の要素を取得
+    const modal = document.getElementById("lightboxModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+
+    // 各ギャラリー画像にクリックイベントを追加
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImage.src = img.src;
+        modalCaption.textContent = img.getAttribute("data-caption");
+      });
+    });
+
+    // 背景クリックでモーダルを閉じる
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
