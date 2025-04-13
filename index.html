@@ -2,43 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <!-- モバイル対応 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ページタイトル -->
   <title>油揚げのホームページ - トップ</title>
-  <!-- ページ説明（Meta Description） -->
-  <meta name="description" content="油揚げのホームページは、SNSリンク、ギャラリー、ブログ、使用しているデバイスなどを紹介するサイトです。">
-  <!-- 検索エンジンにインデックスを促す -->
+  <meta name="description" content="油揚げのホームページは、油揚げに関する情報やSNSリンク、ギャラリー、ブログ、使用しているデバイスなどを紹介するサイトです。">
   <meta name="robots" content="index, follow">
-  <!-- Canonical URL（正規URL） -->
-  <link rel="canonical" href="https://aburaageaburaage.com/index.html">
-  
-  <!-- Open Graph Meta Tags（SNSでのシェア時に利用） -->
+  <link rel="canonical" href="https://yourusername.github.io/index.html">
+
   <meta property="og:title" content="油揚げのホームページ - トップ">
-  <meta property="og:description" content="油揚げのホームページは、油揚げのSNSリンク、ギャラリー、ブログ、使用しているデバイスなどを紹介するサイトです。">
+  <meta property="og:description" content="油揚げに関する情報やSNS、ブログ、ギャラリーなどを紹介しています。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aburaageaburaage.com/index.html">
-  <meta property="og:image" content="https://aburaageaburaage.com/photo9.jpg">
-  
-  <!-- Twitter Card Meta Tags -->
+  <meta property="og:url" content="https://yourusername.github.io/index.html">
+  <meta property="og:image" content="https://yourusername.github.io/og-image.jpg">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="油揚げのホームページ - トップ">
-  <meta name="twitter:description" content="油揚げのホームページは、油揚げのSNSリンク、ギャラリー、ブログ、使用しているデバイスなどを紹介するサイトです。">
-  <meta name="twitter:image" content="https://aburaageaburaage.com/photo9.jpg">
-  
-  <!-- 構造化データ（JSON-LD） -->
+  <meta name="twitter:description" content="油揚げに関する情報やSNS、ブログ、ギャラリーなどを紹介しています。">
+  <meta name="twitter:image" content="https://yourusername.github.io/og-image.jpg">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "油揚げのホームページ",
-    "url": "https://aburaageaburaage.com/index.html",
-    "description": "油揚げのホームページは、油揚げに関する情報やSNSリンク、ギャラリー、ブログ、使用しているデバイスなどを紹介するサイトです。"
+    "url": "https://yourusername.github.io/index.html",
+    "description": "油揚げに関する情報やSNS、ブログ、ギャラリーなどを紹介しています。"
   }
   </script>
-  
+
   <style>
-    /* リセット */
     * {
       margin: 0;
       padding: 0;
@@ -46,12 +37,11 @@
     }
     body {
       font-family: Arial, sans-serif;
-      color: #333;
       background-color: #f7f7f7;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      line-height: 1.6;
     }
     header {
       background-color: #fff;
@@ -62,7 +52,6 @@
     header h1 {
       font-size: 2em;
     }
-    /* ヘッダーのトップタブ */
     .top-nav {
       margin-top: 10px;
       border-bottom: 1px solid #ddd;
@@ -72,7 +61,6 @@
       list-style: none;
       display: inline-flex;
       justify-content: center;
-      padding: 0;
     }
     .top-nav li {
       margin: 0 15px;
@@ -82,24 +70,22 @@
       color: #007acc;
       font-size: 1.2em;
     }
-    .top-nav a:hover {
-      text-decoration: underline;
-    }
     .top-nav .active a {
       font-weight: bold;
       color: #333;
     }
-    /* コンテナ（サイドバー＋メインコンテンツ） */
     .container {
       display: flex;
       flex: 1;
     }
-    /* サイドバー */
     .sidebar {
       width: 200px;
       background-color: #fff;
       border-right: 1px solid #ddd;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .sidebar ul {
       list-style: none;
@@ -122,7 +108,6 @@
       background-color: #007acc;
       color: #fff;
     }
-    /* メインコンテンツ */
     .main-content {
       flex: 1;
       padding: 20px;
@@ -150,6 +135,38 @@
       background-color: #fff;
       border-top: 1px solid #ddd;
     }
+
+    /* ダークモード */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    body.dark-mode header,
+    body.dark-mode .sidebar,
+    body.dark-mode footer {
+      background-color: #1e1e1e;
+      color: #eee;
+      border-color: #444;
+    }
+    body.dark-mode .top-nav a {
+      color: #90caf9;
+    }
+    body.dark-mode .top-nav .active a {
+      color: #fff;
+    }
+    body.dark-mode .sidebar a {
+      color: #eee;
+    }
+    body.dark-mode .sidebar a:hover {
+      background-color: #333;
+    }
+    body.dark-mode .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+    body.dark-mode .social-links a {
+      color: #90caf9;
+    }
   </style>
 </head>
 <body>
@@ -161,17 +178,25 @@
       </ul>
     </nav>
   </header>
+
   <div class="container">
     <nav class="sidebar">
-      <ul>
-        <li class="active"><a href="index.html">トップ</a></li>
-        <li><a href="gallery.html">ギャラリー</a></li>
-        <li><a href="blog.html">ブログ</a></li>
-        <li><a href="devices.html">使っているデバイス</a></li>
-      </ul>
+      <div>
+        <ul>
+          <li class="active"><a href="index.html">トップ</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="blog.html">ブログ</a></li>
+          <li><a href="devices.html">使っているデバイス</a></li>
+        </ul>
+      </div>
+      <div style="margin-top: 20px;">
+        <label style="font-size: 0.9em;">
+          <input type="checkbox" id="darkToggle"> ダークモード
+        </label>
+      </div>
     </nav>
+
     <div class="main-content">
-      <!-- トップページのコンテンツ -->
       <h2>トップ</h2>
       <hr>
       <h3>SNSリンク</h3>
@@ -183,8 +208,21 @@
       </ul>
     </div>
   </div>
+
   <footer>
     &copy; 2025 油揚げのホームページ
   </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const isDark = localStorage.getItem('dark-mode') === 'true';
+    document.body.classList.toggle('dark-mode', isDark);
+    toggle.checked = isDark;
+
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode', toggle.checked);
+      localStorage.setItem('dark-mode', toggle.checked);
+    });
+  </script>
 </body>
 </html>
