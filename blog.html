@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>油揚げのホームページ - ブログ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header h1 { font-size: 2em; }
+
+    .top-nav {
+      margin-top: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .top-nav ul {
+      list-style: none;
+      display: inline-flex;
+      justify-content: center;
+    }
+    .top-nav li { margin: 0 15px; }
+    .top-nav a {
+      text-decoration: none;
+      color: #007acc;
+      font-size: 1.2em;
+    }
+    .top-nav .active a {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar ul { list-style: none; }
+    .sidebar li { margin-bottom: 10px; }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      display: block;
+      border-radius: 4px;
+    }
+    .sidebar a:hover {
+      background-color: #eaeaea;
+    }
+    .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .blog-card {
+      display: flex;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .blog-card img {
+      width: 250px;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .blog-card-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .blog-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .blog-date {
+      font-size: 0.85em;
+      color: #777;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+    }
+
+    /* ダークモード */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    body.dark-mode header,
+    body.dark-mode .sidebar,
+    body.dark-mode footer {
+      background-color: #1e1e1e;
+      color: #eee;
+      border-color: #444;
+    }
+    body.dark-mode .top-nav a { color: #90caf9; }
+    body.dark-mode .top-nav .active a { color: #fff; }
+    body.dark-mode .sidebar a { color: #eee; }
+    body.dark-mode .sidebar a:hover { background-color: #333; }
+    body.dark-mode .sidebar .active a {
+      background-color: #007acc;
+      color: #fff;
+    }
+    body.dark-mode .blog-card {
+      background-color: #1e1e1e;
+      border-color: #444;
+    }
+    body.dark-mode .blog-date {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>油揚げのホームページ</h1>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <div>
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li class="active"><a href="blog.html">ブログ</a></li>
+          <li><a href="devices.html">使っているデバイス</a></li>
+        </ul>
+      </div>
+      <div style="margin-top: 20px;">
+        <label style="font-size: 0.9em;">
+          <input type="checkbox" id="darkToggle"> ダークモード
+        </label>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <h2>ブログ</h2>
+      <p>記事の一覧です。クリックすると詳細ページが表示されるように作れます。</p>
+
+      <div class="blog-list">
+        <!-- 記事カード例 -->
+        <a class="blog-card" href="blog/post1.html">
+          <img src="img/thumb1.jpg" alt="記事1のサムネイル">
+          <div class="blog-card-content">
+            <div class="blog-title">タイトル1</div>
+            <div class="blog-date">2025-00-00</div>
+          </div>
+        </a>
+
+        <a class="blog-card" href="blog/post2.html">
+          <img src="img/blog/thumb2.jpg" alt="記事2のサムネイル">
+          <div class="blog-card-content">
+            <div class="blog-title">タイトル2</div>
+            <div class="blog-date">2025-00-00</div>
+          </div>
+        </a>
+
+        <a class="blog-card" href="blog/post3.html">
+          <img src="img/blog/thumb3.jpg" alt="記事3のサムネイル">
+          <div class="blog-card-content">
+            <div class="blog-title">タイトル3</div>
+            <div class="blog-date">2025-00-00</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 油揚げのホームページ
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const isDark = localStorage.getItem('dark-mode') === 'true';
+    document.body.classList.toggle('dark-mode', isDark);
+    toggle.checked = isDark;
+
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode', toggle.checked);
+      localStorage.setItem('dark-mode', toggle.checked);
+    });
+  </script>
+</body>
+</html>

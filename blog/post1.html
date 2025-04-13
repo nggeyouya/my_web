@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>油揚げブログ - 記事タイトル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* スクロールバー */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background-color: #007acc;
+      z-index: 9999;
+      transition: width 0.1s ease;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .post-title {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .post-date {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    .post-body p {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9em;
+      background-color: #fff;
+      margin-top: 60px;
+      border-top: 1px solid #ddd;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 0.9em;
+      background-color: #eee;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .dark-toggle input {
+      margin-right: 6px;
+    }
+
+    /* ダークモード */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: #1e1e1e;
+      color: #eee;
+      border-color: #444;
+    }
+    body.dark-mode .post-date {
+      color: #aaa;
+    }
+    body.dark-mode .dark-toggle {
+      background-color: #2c2c2c;
+      color: #eee;
+    }
+
+    /* リンク */
+    a {
+      color: #007acc;
+    }
+    body.dark-mode a {
+      color: #90caf9;
+    }
+  </style>
+</head>
+<body>
+  <div id="progressBar"></div>
+
+  <header>
+    <h1>油揚げのブログ</h1>
+  </header>
+
+  <div class="container">
+    <div class="post-title">記事タイトルをここに</div>
+    <div class="post-date">投稿日: 2025年4月14日</div>
+
+    <div class="post-body">
+      <p>これは記事本文の一部です。油揚げについての考察をじっくりと語っていく場所です。</p>
+      <p>記事の途中で<strong>画像</strong>や<em>リンク</em>なども使えます。たとえば以下のように。</p>
+      <p><img src="img/blog/example.jpg" alt="記事中の画像" style="max-width: 100%; border-radius: 8px;"></p>
+      <p>さらに、いろんな話題を広げていきましょう。</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+      <p>最後まで読んでいただきありがとうございます！</p>
+    </div>
+  </div>
+
+  <div class="dark-toggle">
+    <label>
+      <input type="checkbox" id="darkToggle"> ダークモード
+    </label>
+  </div>
+
+  <footer>
+    &copy; 2025 油揚げのホームページ
+  </footer>
+
+  <script>
+    // スクロール進捗バー
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    });
+
+    // ダークモード切替
+    const toggle = document.getElementById('darkToggle');
+    const isDark = localStorage.getItem('dark-mode') === 'true';
+    document.body.classList.toggle('dark-mode', isDark);
+    toggle.checked = isDark;
+
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode', toggle.checked);
+      localStorage.setItem('dark-mode', toggle.checked);
+    });
+  </script>
+</body>
+</html>
